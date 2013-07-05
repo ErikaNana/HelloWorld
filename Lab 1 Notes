@@ -1,0 +1,120 @@
+Component classes
+------------------
+4 major types of component classes in any Android app = entry points into app, or ways to have os invoke app
+
+-Activities
+	-like a form for a web page, displays a user interface for the purpose of performing a single task
+	-example: Login Screen
+	
+-Services:
+	-have no user interface
+	-run in the background to perform some sort of a task
+	-example of a Service class: one that fetches email from web server
+	
+Content Providers:
+	-provide data from their app to other apps
+	-work with shared app data that can be stored anywhere persistent (like the web)
+	-example: components of this type would allow an email app to use the phone's existing contact list app
+	for looking up and retrieving an email address
+	
+Broadcast Receivers:
+	-only purpose is to receive and react to broadcast announcements which are either initiated by system code or other 
+	apps.
+	-like Event Listeners or Handlers
+	-example: a broadcast announcement may be made to signal that a WiFi connection has been established.
+	A Broadcast Receiver for an email app listening for that broadcast may then trigger a Service to fetch email
+	
+
+Side Note
+---------
+-if have trouble getting things to compile, try Project --> Clean.  Also try restart Eclipse.
+
+Getting the User's Name
+------------------------
+-Lay out the interface in XML
+-Create the new Activity class, hook the XML up to it, then parse the input from the user and initiate the 
+ HelloWorld Activity
+-reconfigure the app to use new Activity on startup instead of HelloWorldActivity
+
+Creating the Activity Class (for user input)
+--------------------------------------------
+Title is also Hello World
+	-since we intend to have new Activity show up on Launch, Title = app's name
+	
+Learned
+--------
+-import shortcut: ctr + shft + o
+	-do this if something can't be resolved to a type
+-RelativeLayout
+	-android:gravity property
+		-think of it as a text-align property, only for horizontal and vertical alignment
+
+Android Manifest
+-----------------
+-contains information on all of the app's components, including which component should be used
+ in different scenarios
+-need to tell app to use the new activity on startup instead of the HelloWorldActivity it was 
+ previously using
+-Intent Filter tag nested inside Activity tag is what tells teh app that this Activity is the main,
+or startup, Activity.  Want EnterNameActivity to be the first Activity launched, so delete
+all traces of intent filter from HelloWorldActivity element in Manifest file
+-example:
+        <activity
+            android:name="lab1.helloworld.HelloWorldActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+Exporting Your Application
+---------------------------
+-in order for app to be run on a physical device, it must be digitally signed with a certificate
+-use a self-signed certificate
+-do this with Eclipse ADT plugin ---> Export Wizard
+-go to site and do Compile and sign with Eclipse ADT
+	-read section on Securing Your Private Key
+-important if want to release an app to public in Google Play Store in the future
+
+Still Need to Refresh
+----------------------
+-"this" keyword
+-interfaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

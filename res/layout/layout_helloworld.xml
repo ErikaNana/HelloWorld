@@ -1,0 +1,24 @@
+<!-- 
+
+RelativeLayout: defines the style of the layout
+	-means that UI elements will be laid out in accordance with other elements inside of the layout
+TextView:
+	-defines a UI element for displaying text
+	-properties: width, height, text to display
+	-set to reference resource value @string, which points to strings.xml file -->				
+					
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:gravity = "center"
+    tools:context=".HelloWorldActivity" >
+
+    <TextView
+        android:id = "@+id/text_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "@string/hello_world"/> 
+
+</RelativeLayout>

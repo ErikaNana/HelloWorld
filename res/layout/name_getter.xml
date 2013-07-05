@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" >
+    
+<!--
+
+-Each XML layout file must have a single root view component, inside which all other view components
+are nested.  LinearLayout tells Android to arrange elements contained inside itself in a straight line
+in the order which they appear  
+-fill_parent = tells Android that LinearLayoug should take up all available width and height
+-orientation = vertical = tells Android that elements nested inside the LinearLayout should be laid out
+ in a column, as opposed to a single row (horizontal).
+ 	-example: first item in LinearLayout will be at top, then second item below first item, etc
+-can nest other Layout elements within each other
+
+-TextView
+	-set android:text = "@string/name_prompt
+		-how reference resources
+		-syntax: @type/handle
+	-strings.xml file => Add => Name = name_prompt, Value = What is your name?
+	
+-EditText
+	-attribute: android:hint
+	-<requestFocus /> = means focus will be given to EditText component when app is launched
+	 and this screen appears on screen
+	 	-users immediately enter text into field without having to navigate or press the
+	 	 EditText component on the screen first
+-Button
+	-will display value contained in the android:text attribute
+-->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text= "@string/name_prompt" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint = "@string/name_hint" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text ="@string/button_value" />
+
+</LinearLayout>
+

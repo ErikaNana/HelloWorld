@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hello World</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="name_prompt">What is your name?</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="button_value">Submit</string>
+    <string name="title_activity_enter_name_activty">Hello World</string>
+
+</resources>
